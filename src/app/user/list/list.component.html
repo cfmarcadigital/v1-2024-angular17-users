@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>ICEITech - Angular CRUD Users</h1>
+  
+    <a href="#" routerLink="/users/create/" class="btn btn-success">Create New User</a>
+    
+    <table class="table table-bordered" *ngIf="users.length > 0; else nodata">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Company</th>
+        <th>Website</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address.city }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.company.name }}</td>
+        <td>{{ user.website }}</td>
+        <td>
+          <!--<a href="#" [routerLink]="['/users/', user.id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/users/', user.id, 'edit']" class="btn btn-primary">Edit</a>-->
+          <button type="button" (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+    <ng-template #nodata>
+        <h4>Not Users registered.</h4>
+    </ng-template>
+ </div>

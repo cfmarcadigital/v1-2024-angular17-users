@@ -1,0 +1,94 @@
+<div class="container">
+    <h1>Create New User</h1>
+  
+    <a href="#" routerLink="/users/list" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].errors">Name is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].errors">Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                <div *ngIf="f['email'].errors">Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input 
+                formControlName="city"
+                id="city" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['city'].touched && f['city'].invalid" class="alert alert-danger">
+                <div *ngIf="f['city'].errors">Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input 
+                formControlName="phone"
+                id="phone" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['phone'].touched && f['phone'].invalid" class="alert alert-danger">
+                <div *ngIf="f['phone'].errors">Phone is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="company">Company:</label>
+            <input 
+                formControlName="company"
+                id="company" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['company'].touched && f['company'].invalid" class="alert alert-danger">
+                <div *ngIf="f['company'].errors">Company is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <input 
+                formControlName="website"
+                id="website" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['website'].touched && f['website'].invalid" class="alert alert-danger">
+                <div *ngIf="f['website'].errors">Website is required.</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
